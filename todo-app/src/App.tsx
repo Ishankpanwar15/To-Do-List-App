@@ -23,14 +23,28 @@ function App() {
   
 
   return (
-    <div>
-      <h1>To do list</h1>
-      <input 
-      type="text"
-      value={newTask}
-      onChange={(e)=> setNewTask(e.target.value)}
-      />
-      <button onClick={handleAddTask}>Add</button>
+      <div style={{ 
+       padding: "20px",
+       background: "LightGray",
+       display: "flex",
+       justifyContent: "center",
+       alignItems: "center",
+       height: "90vh",
+       flexDirection: "column"
+       }}>
+        <h1>To-Do List App</h1>
+  
+        <input
+          style={{ width: "270px", padding: "5px", fontSize: "14px" }}
+          type="text"
+          placeholder="Add a task..."
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+        />
+        <button
+        style={{ marginBottom: "10px,0,0,10px" }}
+        onClick={handleAddTask}>Add</button>
+    
       <ul>
         {tasks.map((task) => (
           <li key={task.id}>
@@ -39,7 +53,6 @@ function App() {
           </li>
         ))}
       </ul>
-      
     </div>
     
   )
