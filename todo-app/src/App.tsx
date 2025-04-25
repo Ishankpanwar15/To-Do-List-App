@@ -21,7 +21,13 @@ function App() {
     setTasks(tasks.filter((task) => task.id !== id));
   };
   
-
+        <input
+          style={{ width: "270px", padding: "5px", fontSize: "14px" }}
+          type="text"
+          placeholder="Add a task..."
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+        />
   return (
       <div style={{ 
        padding: "20px",
@@ -35,14 +41,19 @@ function App() {
         <h1>To-Do List App</h1>
   
         <input
-          style={{ width: "270px", padding: "5px", fontSize: "14px" }}
+          style={{ width: "250px", padding: "3px", fontSize: "16px" }}
           type="text"
           placeholder="Add a task..."
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
-        />
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleAddTask();
+            }
+          }}
+        />        
         <button
-        style={{ marginBottom: "10px,0,0,10px" }}
+        style={{ marginTop: "10px" }}
         onClick={handleAddTask}>Add</button>
     
       <ul>
