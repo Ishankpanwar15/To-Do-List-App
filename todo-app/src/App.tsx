@@ -47,7 +47,7 @@ function App() {
           style={{
             position: "absolute",
             top: "20px",
-            right: "20x",
+            right: "20px",
             padding: "8px",
             background: darkMode ? "#ddd" : "#333",
             color: darkMode ? "#000" : "#fff",
@@ -116,7 +116,14 @@ function App() {
       {tasks.length > 0 && (
         <button
         onClick={() => setTasks([])}
-        style={{ marginTop: "20px", background: "blue", color: "white", padding: "8px 16px" }}
+        style={{ 
+          marginTop: "20px",
+          background: "blue",
+          color: "white",
+          padding: "8px 16px",
+          borderRadius: "10px",
+          boxShadow:darkMode ?"2px 2px 8px 5px rgb(255 255 255 / 0.1)":"2px 2px 2px 5px rgb(0 0 0 / 0.1)",
+          }}
         >
           Clear All
         </button>
