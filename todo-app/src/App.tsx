@@ -104,12 +104,8 @@ function App() {
           <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
             {task.title}
           </span>
-          <button
-            onClick={() => {
-              setTasks(tasks.filter((t) => t.id !== task.id));
-            }}
-            style={{ marginLeft: "10px" }}
-            >
+          <button onClick={() => handleDelete(task.id)} >
+
             Delete
           </button>
         </li>
